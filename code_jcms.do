@@ -4,8 +4,8 @@
 // Author: Karina Shyrokykh (Stockholm University)
 // Data structure: TSCS
 
-xtset country_code YEAR
 
+xtset country_code YEAR
 
 // Model 1
 xtpoisson log_EVENTS log_requests polity2  log_pop log_gdp gov_eff pol_sta  trade_agreement ///
@@ -35,7 +35,7 @@ eligibility  memb_asp_new eu_potential_candidates_new eu_candidates_new intern_p
 xtpoisson log_EVENTS log_requests Llog_EVENTS polity2  log_pop log_gdp gov_eff pol_sta trade_agreement ///
 eligibility  memb_asp_new eu_potential_candidates_new eu_candidates_new intern_partner, fe 
 
-// Robustness check, Appendix Table E1, Model 5: diff
+// Robustness check, Appendix Table E1, Model 5: fe & time trend
 xtpoisson log_EVENTS log_requests polity2  log_pop log_gdp gov_eff pol_sta YEAR trade_agreement ///
 eligibility  memb_asp_new eu_potential_candidates_new eu_candidates_new intern_partner, fe vce(robust) 
 
@@ -54,3 +54,5 @@ REQS_TEAM_AGR REQS_TEAM_ETT REQS_TEAM_INTMARKT REQS_TEAM_JHA , re vce(robust)
 xtpoisson log_requests Llog_EVENTS polity2  log_pop log_gdp gov_eff pol_sta trade_agreement ///
 eligibility  memb_asp_new eu_potential_candidates_new eu_candidates_new intern_partner ///
 REQS_TEAM_AGR REQS_TEAM_ETT REQS_TEAM_INTMARKT REQS_TEAM_JHA , fe vce(robust) 
+
+
